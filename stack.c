@@ -19,7 +19,7 @@ int push(linkstack h,int data)  // 入栈
         perror("malloc");
         return -1;
     }
-    p->data = data;
+    p->b = data;
     p->next = h->next;
     h->next = p;
     return 0;
@@ -32,7 +32,7 @@ int isempty(linkstack h)  // 判断栈是否为空
         return 1;
     }
     return 0;
-
+    
 }
 int pop(linkstack h)   // 出栈
 {
@@ -44,9 +44,8 @@ int pop(linkstack h)   // 出栈
     }
     p = h->next;
     h->next = p->next;
-    data = p->data;
+    data = p->b;
     free(p);
     return data;
     
 }
-
