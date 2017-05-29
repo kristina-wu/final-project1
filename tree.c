@@ -1,44 +1,52 @@
 #include"include/tree.h"
-Tree InitTree(){
-  Tree T=NULL;
-  int ch;
-  ch=getchar();
-  if(ch!='#'){
-       T=(Tree)malloc(sizeof(TNode));
-       T->firstchild=NULL;
-       T->nextsibling=NULL;
-       T->data=ch;
-  }
-  return T;
+BitNode *BinTreeCreat(BitNode *BT) //按先序次序构造二叉树
+{
+    char c;
+    scanf("%c",&c);
+    if(c==' ')BT=NULL;
+    else
+    {
+        BT->c=c;
+        BT->lchild=BinTreeCreat(BT->lchild); //注意因为有返回值，必须有左值
+        BT->rchild=BinTreeCreat(BT->rchild);
+    }
+    return BT;
 }
-void deleteTree(Tree T){
-    if(!T)
-        return OK;
-    else{
-        deleteTree(T->firstchild);
-        deleteTree(T->nextsibling);
-        free(T);
-        T=NULL;
+int BinTreeEmpty(BitNode *BT)//检查二叉树是否为空
+{
+    if(BT==NULL)return 1;
+    else return 0;
+}
+void PreOrderTraverse(BitNode *BT)//先序遍历树
+{
+    if(BT)
+    {
+        printf("%c",BT->c);
+        PreOrderTraverse(BT->lchild);
+        PreOrderTraverse(BT->rchild);
     }
 }
-void TraverseTree(Tree T){
-    if(T){
-        visit(T->data);
-        TreaverseTree(T->firstchild);
-        TreaverseTree(T->nextsibling);
+int BinTreeDepth(BitNode *BT)//求二叉树的深度
+{
+    int dep1,dep2;
+    if(BT==NULL)return 0;
+    else
+    {
+        dep1=BinTreeDepth(BT->lchild);
+        dep2=BinTreeDepth(BT->rchild);
+        if(dep1>dep2)return 1+dep1;
+        else return 1+dep2;
     }
-    return 0;
 }
-void TreeDepth(Tree T){
-    int height=0,hmax=0;
-    if(T){
-      Tree p=T->firstchild;
-      while(p){
-         height=TreeDrpth(p);
-         p=p->nextsibling;
-         if(hmax
-            hmax=height;
-      }
-   }
-   return hmax+1;
+
+void BinTreeClear(BitNode **BT)//清除二叉树
+{
+    if(*BT)
+    {
+        BinTreeClear(&(*BT)->lchild);
+        BinTreeClear(&(*BT)->rchild);
+        free(*BT);
+        *BT=NULL;
+    }
 }
+
