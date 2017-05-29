@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include"include/queue.h"
 
 sequeue_t *CreateEmptySequeue()  //建立队
 {  
