@@ -1,12 +1,5 @@
 #include<stdio.h>
 
-#define N 64  //队列中数据元素的数据类型  
-typedef int data_t;  
-typedef struct  
-{  
-    data_t data[N]; //用数组作为队列的储存空间  
-    int front,rear; //指示队头位置和队尾位置的指针  
-}sequeue_
 sequeue_t *CreateEmptySequeue()  //建立队
 {  
     sequeue_t *queue;  
