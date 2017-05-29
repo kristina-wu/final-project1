@@ -2,7 +2,7 @@
 #define _ARRAY_H
 typedef struct BitNode
 {
-    int c;
+    char c;
     struct BitNode *lchild,*rchild;
 }BitNode,*BitTree;
 BitNode *BinTreeCreat(BitNode *BT);
