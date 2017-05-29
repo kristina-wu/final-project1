@@ -3,12 +3,12 @@
 #include"tree.h"
 BitNode *BinTreeCreat(BitNode *BT) //按先序次序构造二叉树
 {
-    char c;
+    char d;
     getchar();
-    if(c==' ')BT=NULL;
+    if(d==' ')BT=NULL;
     else
     {
-        BT->c=c;
+        BT->c=d;
         BT->lchild=BinTreeCreat(BT->lchild); //注意因为有返回值，必须有左值
         BT->rchild=BinTreeCreat(BT->rchild);
     }
@@ -23,7 +23,7 @@ void PreOrderTraverse(BitNode *BT)//先序遍历树
 {
     if(BT)
     {
-        printf("%d",BT->c);
+        printf("%c",BT->c);
         PreOrderTraverse(BT->lchild);
         PreOrderTraverse(BT->rchild);
     }
