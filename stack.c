@@ -1,4 +1,6 @@
-#include"include/stack.h"
+#include<stdio.h>
+#include<stdlib.h>
+#include"stack.h"
 
 linkstack create()   // 建立栈
 {

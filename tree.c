@@ -1,8 +1,10 @@
-#include"include/tree.h"
+#include<stdio.h>
+#include<stdlib.h>
+#include"tree.h"
 BitNode *BinTreeCreat(BitNode *BT) //按先序次序构造二叉树
 {
     char c;
-    scanf("%c",&c);
+    getchar();
     if(c==' ')BT=NULL;
     else
     {
@@ -21,7 +23,7 @@ void PreOrderTraverse(BitNode *BT)//先序遍历树
 {
     if(BT)
     {
-        printf("%c",BT->c);
+        printf("%d",BT->c);
         PreOrderTraverse(BT->lchild);
         PreOrderTraverse(BT->rchild);
     }

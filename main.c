@@ -1,16 +1,11 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
+#include<malloc.h>
 
-#include"include/queue.h"
-#include"include/stack.h"
-#include"include/tree.h"
-
-#define N 64  //队列中数据元素的数据类型
-typedef struct
-{
-    int a[N]; //用数组作为队列的储存空间
-    int front,rear; //指示队头位置和队尾位置的指针
-}sequeue_t;
+#include"queue.h"
+#include"stack.h"
+#include"tree.h"
 typedef struct node{
     int b;
     struct node * next;
@@ -20,11 +15,24 @@ typedef struct BitNode
     int c;
     struct BitNode *lchild,*rchild;
 }BitNode,*BitTree;
-
 int main()
 {
-    int p,*q;int t,d;
-    scanf("%d",&p);
+    sequeue_t *CreateEmptySequeue();
+    int EmptySequeue(sequeue_t *queue);
+    int EnQueue(sequeue_t *queue, int x);
+    int DeQueue(sequeue_t *queue, int *x);
+    linkstack create() ;
+   int isempty(linkstack h);
+   int push(linkstack h,int data);
+   int pop(linkstack h);
+    BitNode *BinTreeCreat(BitNode *BT);
+    int BinTreeEmpty(BitNode *BT);
+    void PreOrderTraverse(BitNode *BT);
+    int BinTreeDepth(BitNode *BT);
+    void BinTreeClear(BitNode **BT);
+
+    int p,*q;int t,d,r;
+    r=scanf("%d",&p);
     sequeue_t *queue;
     queue=CreateEmptySequeue();
     t=EmptySequeue(queue); printf("%d",t);

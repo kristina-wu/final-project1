@@ -1,4 +1,7 @@
-#include"include/queue.h"
+#include<stdio.h>
+#include<stdlib.h>
+#include"queue.h"
+#define N 60
 
 sequeue_t *CreateEmptySequeue()  //建立队
 {
