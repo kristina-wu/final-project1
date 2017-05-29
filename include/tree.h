@@ -1,9 +1,10 @@
 #ifndef _ARRAY_H
 #define _ARRAY_H
 
-Tree InitTree();
-void TraverseTree(Tree T);
-void TreeDepth(Tree T);
-void deleteTree(Tree T);
+BitNode *BinTreeCreat(BitNode *BT);
+int BinTreeEmpty(BitNode *BT);
+void PreOrderTraverse(BitNode *BT);
+int BinTreeDepth(BitNode *BT);
+void BinTreeClear(BitNode **BT);
 
 #endif
