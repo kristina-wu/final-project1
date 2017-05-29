@@ -1,3 +1,5 @@
+#include<stdio.h>
+
 #define N 64  //队列中数据元素的数据类型  
 typedef int data_t;  
 typedef struct  
