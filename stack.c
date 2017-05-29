@@ -1,10 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-typedef int datatype;
-typedef struct node{
-    datatype data;
-    struct node * next;
-}linknode,*linkstack;
+#include"include/stack.h"
 
 linkstack create()   // 建立栈
 {
@@ -17,7 +11,7 @@ linkstack create()   // 建立栈
     h->next = NULL;
     return h;
 }
-int push(linkstack h,datatype data)  // 入栈
+int push(linkstack h,int data)  // 入栈
 {
     linkstack p;
     if((p = (linkstack)malloc(sizeof(linknode)))==NULL)
@@ -40,9 +34,9 @@ int isempty(linkstack h)  // 判断栈是否为空
     return 0;
 
 }
-datatype pop(linkstack h)   // 出栈
+int pop(linkstack h)   // 出栈
 {
-    datatype data;
+    int data;
     linkstack p = NULL;
     if(isempty(h))
     {
@@ -55,19 +49,4 @@ datatype pop(linkstack h)   // 出栈
     return data;
     
 }
-void show(linkstack h)
-{
-    linkstack p = NULL;
-    if(isempty(h))
-    {
-        printf("is empty!\n");
-        return ;
-    }
-    p = h->next;
-    while(p != NULL)
-    {
-        printf("data = %d\n",p->data);
-        p = p->next;
-    }
 
-}
